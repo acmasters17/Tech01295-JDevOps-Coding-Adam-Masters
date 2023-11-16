@@ -1,28 +1,21 @@
-from functions.weatherRequester import makeWeatherRequestFor
-from functions.weatherParser import parseWeatherForMinMaxTemps
-from functions.resultWriter import writeResultsToFile
+from functions.printWelcomeMessage import printWelcomeMessage
+from handleAskingForWeather import handleAskingForWeather
 
+printWelcomeMessage()
 
-resultingData = makeWeatherRequestFor("London")
-
-if(resultingData != None):
-    # Know we have data so now parse 
-    parsedResult = parseWeatherForMinMaxTemps(resultingData)
-
-    if(parsedResult != None):
-        writeResultsToFile("London", parsedResult)
+# main menu of instructions for program handling
+instruction = None
+while(instruction == None or instruction != "q"):
+    # Run intro message and get a user instruction
+    print("What would you like to do?\n")
+    instruction = input("a - ask for the min/max temperatures for a city\nq - quit\n\n")
+    if(instruction == "a"):
+        handleAskingForWeather()
+    elif(instruction == "q"):
+        print("\nThank you for using the weather program!\n")
     else:
-        print("Something went wrong")
-        
-else:
-    # Know something has gone wrong so halt execution for this cycle
-    print("Something went wrong")
+        print("\nSorry the program doesn't recognise that command yet, please enter either 'a' or 'q'\n")
 
 
-
-
-
-
-print("Hello world")
 
 
