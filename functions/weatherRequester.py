@@ -14,6 +14,7 @@ def makeWeatherRequestFor(city):
     r = requests.get(url = URL, params = PARAMS, headers={'x-api-key': weatherAPIKey})
 
     if(r.ok):
+        print("Successful weather request made!")
         return r.json()
     elif(r.status_code == 403):
         print("Request Forbidden - please ensure you have registered your api key by following the read me and creating an env.py file")
