@@ -1,0 +1,8 @@
+# Ignore file with actual local api key in!
+env.py
+
+# Ignoring results from locally run tests
+__pycache__
+
+# Ignore editor related settings
+.vscode
