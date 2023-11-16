@@ -1,6 +1,7 @@
-from env import weatherAPIKey
+from functions.weatherRequester import makeWeatherRequestFor
 
-print(weatherAPIKey)
+
+makeWeatherRequestFor("London")
 
 
 
