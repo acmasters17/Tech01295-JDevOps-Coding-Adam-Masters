@@ -8,7 +8,7 @@ URL = "https://durvp011gk.execute-api.eu-west-1.amazonaws.com/v1/api/forecasts"
 def makeWeatherRequestFor(city):
     print("Making weather request for " + city + "...")
     # defining a params dict for the parameters to be sent to the API
-    PARAMS = {'city': "London"}
+    PARAMS = {'city': city}
  
     # sending get request and saving the response as response object
     r = requests.get(url = URL, params = PARAMS, headers={'x-api-key': weatherAPIKey})
